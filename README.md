@@ -40,12 +40,18 @@ Before you begin, ensure you have the following prerequisites:
 
    ```bash
    git clone https://github.com/s2emaduddin/task-tracking.git
-2. Build the project:
+2. Open the project in your IDE:
+   Install all maven dependencies.
    ```bash
    cd task-tracker
-   mvn clean install
+   mvn install
 
 ### Configuration
+Make sure you have MySQL Server running 
+Launch MySQL Workbench
+If MySQL Server and Workbench are not configured
+Please follow tutorial here: [MySQL Setup Tutorial](https://www.simplilearn.com/tutorials/mysql-tutorial/mysql-workbench-installation)
+Create task_tracker schema in MySQL Workbench 
 
 Configure the MySQL connection in 
 ```bash
@@ -54,8 +60,10 @@ spring.datasource.url=jdbc:mysql://localhost:3306/task_tracker
 spring.datasource.username=root
 spring.datasource.password=your-password
 
+Run the TaskTrackerApplication class
+
 ### API Documentation
 
 Access the API documentation using Swagger UI
 
-- Swagger UI: http://localhost:8080/swagger-ui.html
+- Swagger UI: http://localhost:8080/swagger-ui/index.html
