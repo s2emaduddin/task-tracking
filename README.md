@@ -55,15 +55,16 @@ Create task_tracker schema in MySQL Workbench
 
 Configure the MySQL connection in 
     ```bash
-  src/main/resources/application.properties
-  spring.datasource.url=jdbc:mysql://localhost:3306/task_tracker
-  spring.datasource.username=root
-  spring.datasource.password=your-password
+    src/main/resources/application.properties
+    spring.datasource.url=jdbc:mysql://localhost:3306/task_tracker
+    spring.datasource.username=root
+    spring.datasource.password=your-password
 
 Run the TaskTrackerApplication class
 
-### API Documentation
 
+
+### API Documentation
 Access the API documentation using Swagger UI
 
 - Swagger UI: http://localhost:8080/swagger-ui/index.html
