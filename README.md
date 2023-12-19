@@ -54,7 +54,7 @@ Please follow tutorial here: [MySQL Setup Tutorial](https://www.simplilearn.com/
 Create task_tracker schema in MySQL Workbench 
 
 Configure the MySQL connection in 
-  ```bash
+    ```bash
   src/main/resources/application.properties
   spring.datasource.url=jdbc:mysql://localhost:3306/task_tracker
   spring.datasource.username=root
