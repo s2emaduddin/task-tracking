@@ -3,6 +3,7 @@ package com.assignment.tasktracker.controller;
 import com.assignment.tasktracker.dto.TaskRequestDTO;
 import com.assignment.tasktracker.dto.TaskResponseDTO;
 import com.assignment.tasktracker.service.TaskService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -44,14 +45,14 @@ public class TaskController {
     }
 
     @PostMapping
-    public ResponseEntity<TaskResponseDTO> createTask(@RequestBody TaskRequestDTO taskRequestDTO) {
+    public ResponseEntity<TaskResponseDTO> createTask(@Valid @RequestBody TaskRequestDTO taskRequestDTO) {
         TaskResponseDTO response = taskService.createTask(taskRequestDTO);
         log.info("Task created successfully");
         return ResponseEntity.ok(response);
     }
 
     @PutMapping("/{taskId}")
-    public ResponseEntity<TaskResponseDTO> updateTask(@PathVariable Long taskId, @RequestBody TaskRequestDTO taskRequestDTO) {
+    public ResponseEntity<TaskResponseDTO> updateTask(@PathVariable Long taskId, @Valid @RequestBody TaskRequestDTO taskRequestDTO) {
         TaskResponseDTO response = taskService.createTask(taskRequestDTO);
         log.info("Task updated successfully");
         return ResponseEntity.ok(response);

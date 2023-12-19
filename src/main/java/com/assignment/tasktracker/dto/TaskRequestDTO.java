@@ -21,7 +21,7 @@ public class TaskRequestDTO {
     @Pattern(regexp = "[a-zA-Z]{4,}")
     private String title;
 
-    @NotNull(message = "Title of the task cannot be null")
+    @NotNull(message = "Description of the task cannot be null")
     @Pattern(regexp = "[a-zA-Z]{4,}")
     private String description;
 

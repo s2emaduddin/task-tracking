@@ -1,14 +1,14 @@
 package com.assignment.tasktracker.exception;
 
-import jakarta.validation.ConstraintViolationException;
+import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
 import java.time.LocalDateTime;
-import java.util.Collections;
+import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class TaskExceptionHandler {
@@ -19,14 +19,17 @@ public class TaskExceptionHandler {
     handles the exception and returns the proper response
     with the error messages defined at the property
      */
-    @ExceptionHandler(ConstraintViolationException.class)
+    @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<ApiError> handleConstraintViolation(ConstraintViolationException ex) {
+    public ResponseEntity<ApiError> handleConstraintViolation(MethodArgumentNotValidException ex) {
         ApiError apiError = new ApiError();
         apiError.setTimestamp(LocalDateTime.now());
         apiError.setStatus(HttpStatus.BAD_REQUEST.value());
         apiError.setError("Bad Request");
-        apiError.setMessages(Collections.singletonList(ex.getMessage()));
+        String errorMessage = ex.getBindingResult().getAllErrors().stream()
+                .map(DefaultMessageSourceResolvable::getDefaultMessage)
+                .collect(Collectors.joining(", "));
+        apiError.setMessage(errorMessage);
 
         return  ResponseEntity.status(HttpStatus.BAD_REQUEST).body(apiError);
     }
