@@ -47,18 +47,18 @@ Before you begin, ensure you have the following prerequisites:
    mvn install
 
 ### Configuration
-Make sure you have MySQL Server running 
-Launch MySQL Workbench
-If MySQL Server and Workbench are not configured
+Make sure you have MySQL Server running.
+Launch MySQL Workbench.
+If MySQL Server and Workbench are not configured, 
 Please follow tutorial here: [MySQL Setup Tutorial](https://www.simplilearn.com/tutorials/mysql-tutorial/mysql-workbench-installation)
 Create task_tracker schema in MySQL Workbench 
 
 Configure the MySQL connection in 
-```bash
-src/main/resources/application.properties
-spring.datasource.url=jdbc:mysql://localhost:3306/task_tracker
-spring.datasource.username=root
-spring.datasource.password=your-password
+  ```bash
+  src/main/resources/application.properties
+  spring.datasource.url=jdbc:mysql://localhost:3306/task_tracker
+  spring.datasource.username=root
+  spring.datasource.password=your-password
 
 Run the TaskTrackerApplication class
 
