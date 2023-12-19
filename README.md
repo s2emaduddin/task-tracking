@@ -39,7 +39,7 @@ Before you begin, ensure you have the following prerequisites:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/task-tracker-api.git
+   git clone https://github.com/s2emaduddin/task-tracking.git
 2. Build the project:
    ```bash
    cd task-tracker
