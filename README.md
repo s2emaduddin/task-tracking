@@ -12,7 +12,7 @@
   - [Installation](#installation)
   - [Configuration](#configuration)
 - [API Documentation](#api-documentation)
-- [Scaling API]
+- [Scaling API](#scaling-api)
 
 ## Introduction
 
