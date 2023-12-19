@@ -18,11 +18,11 @@ public class TaskRequestDTO {
     the global exception handler will catch it and return the error
      */
     @NotNull(message = "Title of the task cannot be null")
-    @Pattern(regexp = "[a-zA-Z]{4,}")
+    @Pattern(regexp = "[a-zA-Z ]{4,}")
     private String title;
 
     @NotNull(message = "Description of the task cannot be null")
-    @Pattern(regexp = "[a-zA-Z]{4,}")
+    @Pattern(regexp = "[a-zA-Z ]{4,}")
     private String description;
 
 }
